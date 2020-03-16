@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class DeviseCreateModels < ActiveRecord::Migration[6.0]
+class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
-    create_table :models do |t|
+    create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -15,11 +15,11 @@ class DeviseCreateModels < ActiveRecord::Migration[6.0]
       t.datetime :remember_created_at
 
       ## Trackable
-      t.integer  :sign_in_count, default: 0, null: false
-      t.datetime :current_sign_in_at
-      t.datetime :last_sign_in_at
-      t.inet     :current_sign_in_ip
-      t.inet     :last_sign_in_ip
+      # t.integer  :sign_in_count, default: 0, null: false
+      # t.datetime :current_sign_in_at
+      # t.datetime :last_sign_in_at
+      # t.inet     :current_sign_in_ip
+      # t.inet     :last_sign_in_ip
 
       ## Confirmable
       # t.string   :confirmation_token
@@ -31,17 +31,16 @@ class DeviseCreateModels < ActiveRecord::Migration[6.0]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-
-      t.string :User
       t.string :city
       t.string :state
       t.string :zipcode
+
       t.timestamps null: false
     end
 
-    add_index :models, :email,                unique: true
-    add_index :models, :reset_password_token, unique: true
-    # add_index :models, :confirmation_token,   unique: true
-    # add_index :models, :unlock_token,         unique: true
+    add_index :users, :email,                unique: true
+    add_index :users, :reset_password_token, unique: true
+    # add_index :users, :confirmation_token,   unique: true
+    # add_index :users, :unlock_token,         unique: true
   end
 end
