@@ -6,3 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+
+Item.create(:name => "Dairy: Milk, Eggs")
+Item.create(:name => "Paper Products: Toilet Paper, Paper Towels")
+Item.create(:name => "Meat: Chicken, Beef, Pork")
+Item.create(:name => "General Food items: Canned Goods, Cereal, Frozen foods, etc")
+Item.create(:name => "Baby: Diapers, Wipes, Formula")
+Item.create(:name => "Medicine: Cough Medicine, Tylenol, etc.")
