@@ -1,0 +1,6 @@
+need to find icons for low medium and high availability
+instead of creating forms, create a route that will handle the update, since the user doesn't actually have to enter data. 
+
+
+add a search bar near the top for the user to enter a zipcode and a distance drop down. 
+have the search trigger the api call. Then render the index page. 

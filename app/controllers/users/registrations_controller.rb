@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  # prepend_before_action :get_all_stores, only: [:create, :update]
+  
+ 
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -10,6 +13,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
+  # def create
+  #   super
+  # end
  
 
   # GET /resource/edit

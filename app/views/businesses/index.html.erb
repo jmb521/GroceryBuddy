@@ -1,0 +1,26 @@
+<div class="container">
+<h1>Stores within a 10 mile radius</h1>
+<br />
+<br />
+    <% if !@business.empty? %>
+        <% @business.each do |business| %>
+        <h2><%= business.name %></h2>
+        <h4><%= business.address%></h4>
+        <h4><%= business.city%></h4>
+        <% @items.each do |item| %>
+            <%= item.name %>
+                <label>Current Availability: 
+                    <% if !item.get_availability(business).empty? %>
+                    <%item.get_availability(business) %>
+                    <% else %>
+                    No Current Availability
+                    <% end %>
+                </label>
+                <%=link_to "Update Availability", edit_business_item_path(business.id, item.id) %>
+            <hr>
+            <% end %>
+        <% end %>
+    <% else %>
+        No information to display
+    <% end %>
+</div>
