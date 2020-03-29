@@ -1,0 +1,2 @@
+class BusinessItemsController < ApplicationController
+end
