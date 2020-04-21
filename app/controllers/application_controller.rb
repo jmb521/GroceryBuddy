@@ -6,11 +6,12 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
     
   def home
-  
+    
+    
   end
 
   def after_sign_in_path_for(user)
-    # get_all_stores
+    
     home_path
   end
 

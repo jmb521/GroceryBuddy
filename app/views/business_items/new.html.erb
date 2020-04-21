@@ -1,0 +1,11 @@
+
+<%= form_for @business_items, url: business_business_items_path do |f| %>
+    <% f.hidden_field :business_id, value: @business.id %>
+    <% @items.each do |item| %>
+        <%= item.name %>
+        <%= collection_select(:business_item, :availability[], [["Completely out"], ["Some items are available", item.id], ["Fully Stocked", item.id]]) %>
+        <br />
+        <br />
+    <% end %>
+    <%= f.submit  %>
+<% end %>

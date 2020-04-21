@@ -1,8 +1,15 @@
 class BusinessesController < ApplicationController
   # before_action :get_all_stores
+
   def index
-    @business = Business.find_by_zip(current_user.zipcode)
+    
+    @business = Business.all
     @items = Item.all
+  end
+
+  def search
+    @business = Business.find_by_zip(params[:zip])
+    render :index
   end
 
   #
